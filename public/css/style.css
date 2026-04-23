@@ -1,0 +1,340 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+    --paper-bg: #fdfaf3;      /* Warm book paper color */
+    --ink-main: #2c2420;      /* Deep charcoal brown */
+    --ink-dim: #6d5f56;       /* Faded ink */
+    --wood-accent: #8b5e34;   /* Polished oak */
+    --gold: #b89130;          /* Classic gold leaf */
+    --leather-red: #8b2635;   /* Binding color */
+    --border: #d7ccc8;
+}
+
+body {
+    font-family: 'Lora', serif; /* Classic book font */
+    background-color: #eaddcf;
+    background-image: radial-gradient(#d4c3b3 1px, transparent 1px);
+    background-size: 20px 20px; /* Subtle paper texture */
+    color: var(--ink-main);
+    margin: 0;
+    padding: 50px 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--paper-bg);
+    padding: 50px;
+    border-radius: 2px;
+    box-shadow: 
+        5px 5px 0px rgba(0,0,0,0.05),
+        15px 15px 30px rgba(0,0,0,0.1);
+    border-left: 15px solid var(--wood-accent); /* Looks like a book spine */
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--ink-main);
+    margin-bottom: 40px;
+    border-bottom: 2px double var(--gold);
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+/* Form Styling - "The Catalog Entry" */
+.product-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 50px;
+    padding: 30px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--wood-accent);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: var(--ink-main);
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 2px solid var(--gold);
+}
+
+.btn-submit {
+    grid-column: span 2;
+    background-color: var(--ink-main);
+    color: var(--paper-bg);
+    border: none;
+    padding: 15px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+.btn-submit:hover {
+    background-color: var(--wood-accent);
+}
+
+/* Table Styling - "The Ledger" */
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.product-table th {
+    font-family: 'Playfair Display', serif;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    color: var(--wood-accent);
+    padding: 15px;
+    border-bottom: 2px solid var(--gold);
+    text-align: left;
+}
+
+.product-table td {
+    padding: 15px;
+    border-bottom: 1px solid var(--border);
+    font-style: italic; /* Titles look great in italics */
+}
+
+.product-table tr:hover {
+    background: rgba(184, 145, 48, 0.05);
+}
+
+/* Buttons */
+.product-table a {
+    color: var(--wood-accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-bottom: 1px solid transparent;
+}
+
+.product-table a:hover {
+    border-bottom: 1px solid var(--wood-accent);
+}
+
+.product-table button {
+    background: transparent;
+    border: 1px solid var(--leather-red);
+    color: var(--leather-red);
+    padding: 5px 12px;
+    font-family: 'Lora', serif;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.product-table button:hover {
+    background: var(--leather-red);
+    color: white;
+}
+
+/* --- Add these to your existing CSS --- */
+
+/* 1. Style the Dropdown to match the theme */
+select {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: var(--ink-main);
+    cursor: pointer;
+    appearance: none; /* Removes default browser styling */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238b5e34' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+select:focus {
+    outline: none;
+    border-bottom: 2px solid var(--gold);
+}
+
+/* 2. Style the "Categories" navigation button to look like a Bookmark */
+.nav-bookmark {
+    display: inline-block;
+    background: var(--leather-red);
+    color: white !important;
+    padding: 8px 15px 15px 15px;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+    border: none;
+}
+
+.nav-bookmark:hover {
+    transform: translateY(5px);
+    background: var(--wood-accent);
+}
+
+/* 3. Aesthetic Table Enhancements */
+.product-table td:nth-child(4) { /* Price column */
+    font-weight: 600;
+    color: var(--wood-accent);
+    font-family: 'Courier New', monospace; /* Looks like stamped ink */
+}
+
+/* 4. Add a subtle "Paper Grain" overlay */
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0.05;
+    pointer-events: none;
+    background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+}
+
+.container {
+    position: relative; /* Required for the overlay above */
+}
+
+/* 5. Custom Scrollbar for that 'dark wood' look */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--paper-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--wood-accent);
+    border: 2px solid var(--paper-bg);
+}
+
+/* --- Animation Keyframes --- */
+
+/* The 'Opening the Book' effect */
+@keyframes pageOpen {
+    from {
+        opacity: 0;
+        transform: rotateY(-10deg) translateX(-30px);
+        filter: sepia(100%);
+    }
+    to {
+        opacity: 1;
+        transform: rotateY(0deg) translateX(0);
+        filter: sepia(0%);
+    }
+}
+
+/* Subtle pulse for the bookmark */
+@keyframes bookmarkDangle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(3px); }
+}
+
+/* 1. Container Animation (Page Load) */
+.container {
+    position: relative;
+    animation: pageOpen 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    transform-origin: left center;
+    perspective: 1000px;
+}
+
+/* 2. Enhanced Bookmark Animation */
+.nav-bookmark {
+    /* ... your existing styles ... */
+    animation: bookmarkDangle 3s ease-in-out infinite;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s;
+}
+
+.nav-bookmark:hover {
+    animation: none; /* Stop dangling when interacting */
+    transform: translateY(10px) scale(1.05);
+    background: var(--wood-accent);
+}
+
+/* 3. Smooth "Ink Underline" for Inputs */
+input {
+    /* ... your existing styles ... */
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 2px solid var(--gold);
+    padding-left: 10px; /* Subtle "writing" shift */
+    background: rgba(184, 145, 48, 0.03);
+}
+
+/* 4. The Submit Button "Stamp" Effect */
+.btn-submit {
+    /* ... your existing styles ... */
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-submit:active {
+    transform: scale(0.96); /* Feels like pressing a physical stamp */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* 5. Table Row "Highlight" Animation */
+.product-table tr {
+    transition: all 0.2s ease;
+}
+
+.product-table tr:hover {
+    background: rgba(139, 94, 52, 0.08); /* Darker wood-toned hover */
+    transform: scale(1.01); /* Subtle "lift" from the page */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* 6. Form Appearance Stagger (Optional) 
+   Makes the form groups appear one after another */
+.form-group {
+    animation: fadeInUp 0.5s ease backwards;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.2s; }
+.form-group:nth-child(2) { animation-delay: 0.3s; }
+.form-group:nth-child(3) { animation-delay: 0.4s; }
+.form-group:nth-child(4) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
